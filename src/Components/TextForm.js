@@ -15,9 +15,20 @@ export default function TextForm(props) {
         setText(newText)
     }
 
+    const handleAlterClick = (event) => {
+        let newText = text.toLowerCase();
+        newText = newText.split("");
+        for (var i = 1; i < newText.length; i += 2) {
+            newText[i] = newText[i].toUpperCase();
+        }
+        newText = newText.join("");
+        setText(newText)
+    }
+
     const handleOnChange = (event) => {
         setText(event.target.value)
     }
+
 
     const [text, setText] = useState("Your Text Here")
     return (
@@ -27,8 +38,9 @@ export default function TextForm(props) {
                 <div className="mb-3">
                     <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="10"></textarea>
                     <button className='btn btn-primary my-2' onClick={handleClearText}>Clear Text</button>
-                    <button className='btn btn-primary my-2 mx-2' onClick={handleUpClick}>Turn Upper Case</button>
-                    <button className='btn btn-primary my-2' onClick={handleLoClick}>Turn Lower Case</button>
+                    <button className='btn btn-primary my-2 mx-2' onClick={handleUpClick}>Upper Case</button>
+                    <button className='btn btn-primary my-2' onClick={handleLoClick}>Lower Case</button>
+                    <button className='btn btn-primary my-2 mx-2' onClick={handleAlterClick}>Alternate Case</button>
                 </div>
             </div>
             <div className="container">

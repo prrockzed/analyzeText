@@ -10,24 +10,23 @@ const TextShpere = () => {
         return () => {
             const container = ".tagcloud";
             const texts = [
-                "HTML",
-                "CSS",
-                "SASS",
-                "JavaScript",
-                "C++",
-                "Java",
-                "Python",
-                "Ruby",
-                "Php",
-                "React",
-                "Vue",
-                "NodeJS",
-                "Jquery",
-                "GIT",
-                "GITHUB",
-                "Priyanshu",
-                "Ranjan",
-                "Angular"
+                "prrockz",
+                "Text",
+                "Words",
+                "Character",
+                "Analyze",
+                "Paragraphs",
+                "Upper",
+                "Lower",
+                "Case",
+                "Preview",
+                "Count",
+                "Article",
+                "Essay",
+                "Capital",
+                "Sentences",
+                "Reading",
+                "Summary",
             ];
 
             const options = {
@@ -44,7 +43,7 @@ const TextShpere = () => {
     return (
         <div className="text-shpere" >
             {/* span tag className must be "tagcloud"  */}
-            <span className="tagcloud"></span>
+            <center><span className="tagcloud"></span></center>
         </div>
     );
 };
