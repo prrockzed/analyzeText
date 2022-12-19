@@ -4,11 +4,17 @@ import "../App.css";
 // Importing TagCloud package
 import TagCloud from "TagCloud";
 
-const TextShpere = () => {
+const TextShpere = (props) => {
+    let container
+
     // Animation settings for Text Cloud
     useEffect(() => {
         return () => {
-            const container = ".tagcloud";
+            if (props.mode === 'dark') {
+                container = ".cloudgrey";
+            } else {
+                container = ".cloudwhite";
+            }
             const texts = [
                 "prrockz",
                 "Text",
@@ -25,13 +31,13 @@ const TextShpere = () => {
                 "Essay",
                 "Capital",
                 "Sentences",
-                "Reading",
+                "prrockz",
                 "Summary",
             ];
 
             const options = {
                 radius: 200,
-                maxSpeed: "fast",
+                maxSpeed: "normal",
                 initSpeed: "fast",
                 keep: true,
             };
@@ -41,9 +47,8 @@ const TextShpere = () => {
     }, []);
 
     return (
-        <div className="text-shpere" >
-            {/* span tag className must be "tagcloud"  */}
-            <center><span className="tagcloud"></span></center>
+        <div>
+            <span className={props.mode === 'dark' ? "cloudgrey" : "cloudwhite"}></span>
         </div>
     );
 };

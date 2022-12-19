@@ -12,23 +12,38 @@
     background: white;
 }
 
-.tagcloud {
+.cloudwhite {
     display: block;
     top: 0;
     left: 0;
-    margin-left: 5%;
+    margin-left: 0;
+    background-color: white;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     letter-spacing: 0.0625em;
     font-size: 1em;
+    color: red;
+    text-transform: uppercase;
 }
 
-/* Change color of each text in sphere on hover   */
-.tagcloud--item {
-    color: red;
+.cloudgrey {
+    display: block;
+    top: 0;
+    left: 0;
+    margin-left: 0;
+    background-color: rgb(46, 47, 50);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.0625em;
+    font-size: 1em;
+    color: rgb(255, 174, 0);
     text-transform: uppercase;
 }
 
 .pr {
     padding-left: 100px;
+}
+
+.container {
+    border-radius: 12px;
 }
