@@ -56,13 +56,13 @@ export default function TextForm(props) {
     }
 
 
-    const [text, setText] = useState("Your Text Here")
+    const [text, setText] = useState("")
     return (
         <>
             <div className="container my-5" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h1>{props.heading}</h1>
                 <div className="mb-3">
-                    <textarea className="form-control" value={text} onChange={handleOnChange} style={{ backgroundColor: props.mode === 'dark' ? 'rgb(46, 47, 50)' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }} id="myBox" rows="10"></textarea>
+                    <textarea className="form-control" value={text} onChange={handleOnChange} style={{ backgroundColor: props.mode === 'dark' ? 'rgb(46, 47, 50)' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }} id="myBox" rows="10" placeholder='Your Text Here'></textarea>
                     <button className='btn btn-primary my-2' onClick={handleUpClick}>UPPER CASE</button>
                     <button className='btn btn-primary my-2 mx-2' onClick={handleLoClick}>lower case</button>
                     <button className='btn btn-primary my-2' onClick={handleAlterClick}>aLtErNaTe cAsE</button>
@@ -80,7 +80,7 @@ export default function TextForm(props) {
                 <p>{text.split(" ").length} words, {text.length} characters</p>
                 <p>{(0.008 * text.split(" ").length).toFixed(3)} minutes to read</p>
                 <h2>Preview</h2>
-                <p>{text}</p>
+                <p>{text.length > 0 ? text : 'Enter your text in the textbox above to preview it here'}</p>
             </div>
         </>
     )
