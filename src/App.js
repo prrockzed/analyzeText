@@ -24,6 +24,10 @@ function App() {
   return (
     <>
       <Navbar title="Analyze Text" text1="Home" text2="About" mode={mode} toggleMode={toggleMode} />
+      <div className="container">
+        <TextForm heading="Enter the text you want to analyze" mode={mode} />
+      </div>
+      <center><hr style={{ width: '80%' }} /></center>
       {/* <About /> */}
       <table>
         <tbody>
@@ -36,9 +40,6 @@ function App() {
           </tr>
         </tbody>
       </table>
-      <div className="container">
-        <TextForm heading="Enter the text you want to analyze" mode={mode} />
-      </div>
     </>
   );
 }
