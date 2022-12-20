@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './css/App.css';
 import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
 import TextSphere from './Components/Tagcloud'
