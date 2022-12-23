@@ -52,10 +52,82 @@ export default function TextForm(props) {
   const handleInvClick = () => {
     let newText = text.split("");
     for (var i = 0; i < newText.length; i++) {
-      if (newText[i] == newText[i].toLowerCase()) {
+      if (newText[i] === newText[i].toLowerCase()) {
         newText[i] = newText[i].toUpperCase();
       } else {
         newText[i] = newText[i].toLowerCase();
+      }
+    }
+    setText(newText.join(""));
+  }
+
+  const handleCamClick = () => {
+    let newText = text.toLowerCase().split("");
+    for (var i = 0; i < newText.length; i++) {
+      if (newText[i] === " ") {
+        newText[i + 1] = newText[i + 1].toUpperCase();
+      }
+    }
+    newText = newText.filter((n) => {
+      return n !== " ";
+    })
+    setText(newText.join(""));
+  }
+
+  const handlePasClick = () => {
+    let newText = text.toLowerCase().split("");
+    for (var i = 0; i < newText.length; i++) {
+      if (newText[i] === " ") {
+        newText[i + 1] = newText[i + 1].toUpperCase();
+      }
+    }
+    newText[0] = newText[0].toUpperCase();
+    newText = newText.filter((n) => {
+      return n !== " ";
+    })
+    setText(newText.join(""));
+  }
+
+  const handleNocClick = () => {
+    let newText = text.toLowerCase().split(" ").join("");
+    setText(newText);
+  }
+
+  const handleSkeClick = () => {
+    let newText = text.toLowerCase().split("");
+    for (var i = 0; i < newText.length; i++) {
+      if (newText[i] === " ") {
+        newText[i] = '-';
+      }
+    }
+    setText(newText.join(""));
+  }
+
+  const handleSnSClick = () => {
+    let newText = text.toLowerCase().split("");
+    for (var i = 0; i < newText.length; i++) {
+      if (newText[i] === " ") {
+        newText[i] = '_';
+      }
+    }
+    setText(newText.join(""));
+  }
+
+  const handleSnUClick = () => {
+    let newText = text.toUpperCase().split("");
+    for (var i = 0; i < newText.length; i++) {
+      if (newText[i] === " ") {
+        newText[i] = '_';
+      }
+    }
+    setText(newText.join(""));
+  }
+
+  const handlePerClick = () => {
+    let newText = text.toLowerCase().split("");
+    for (var i = 0; i < newText.length; i++) {
+      if (newText[i] === " ") {
+        newText[i] = '.';
       }
     }
     setText(newText.join(""));
@@ -98,10 +170,17 @@ export default function TextForm(props) {
           <button className='btn btn-primary my-2' onClick={handleAlterClick}>aLtErNaTe cAsE</button>
           <button className='btn btn-primary my-2 mx-2' onClick={handleSenClick}>Sentence case</button>
           <button className='btn btn-primary my-2' onClick={handleCapClick}>Capitalized Case</button>
-          <button className='btn btn-primary my-2 mx-2' onClick={handleInvClick}>Inverse Case</button>
-          <button className='btn btn-primary my-2' onClick={handleSpaceClick}>Remove Xtra Space</button>
-          <button className='btn btn-primary my-2 mx-2' onClick={handleDownloadClick}>Download Text</button>
-          <button className='btn btn-primary my-2' onClick={handleCopyClick}>Copy Text</button>
+          <button className='btn btn-primary my-2 mx-2' onClick={handleInvClick}>iNVERSE cASE</button>
+          <button className='btn btn-primary my-2' onClick={handleCamClick}>camelCase</button>
+          <button className='btn btn-primary my-2 mx-2' onClick={handlePasClick}>PascalCase</button>
+          <button className='btn btn-primary my-2' onClick={handleNocClick}>nocase</button>
+          <button className='btn btn-primary my-2 mx-2' onClick={handleSkeClick}>skewer-case</button>
+          <button className='btn btn-primary' onClick={handleSnSClick}>snake_case(sm)</button>
+          <button className='btn btn-primary mx-2' onClick={handleSnUClick}>SNAKE_CASE(UP)</button>
+          <button className='btn btn-primary' onClick={handlePerClick}>period.case</button>
+          <button className='btn btn-primary mx-2' onClick={handleSpaceClick}>Remove Xtra Space</button>
+          <button className='btn btn-primary' onClick={handleDownloadClick}>Download Text</button>
+          <button className='btn btn-primary mx-2' onClick={handleCopyClick}>Copy Text</button>
           <button className='btn btn-primary' onClick={handleClearText}>Clear Text</button>
         </div>
       </div>
