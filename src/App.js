@@ -22,7 +22,6 @@ function App() {
       <Navbar
         title='Analyze Text'
         text1='Home'
-        text2='About'
         mode={mode}
         toggleMode={toggleMode}
       />
@@ -32,7 +31,6 @@ function App() {
       <center>
         <hr style={{ width: '80%' }} />
       </center>
-      {/* <About /> */}
       <table>
         <tbody>
           <tr>
