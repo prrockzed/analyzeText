@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import "../css/App.css";
+import React, { useEffect } from 'react'
+import '../css/App.css'
 
 // Importing TagCloud package
-import TagCloud from "TagCloud";
+import TagCloud from 'TagCloud'
 
 const TextShpere = (props) => {
   let container
@@ -11,46 +11,48 @@ const TextShpere = (props) => {
   useEffect(() => {
     return () => {
       if (props.mode === 'dark') {
-        container = ".cloudgrey";
+        container = '.cloudgrey'
       } else {
-        container = ".cloudwhite";
+        container = '.cloudwhite'
       }
       const texts = [
-        "prrockz",
-        "Text",
-        "Words",
-        "Character",
-        "Analyze",
-        "Paragraphs",
-        "Upper",
-        "Lower",
-        "Case",
-        "Preview",
-        "Count",
-        "Article",
-        "Essay",
-        "Capital",
-        "Sentences",
-        "prrockz",
-        "Summary",
-      ];
+        'prrockz',
+        'Text',
+        'Words',
+        'Character',
+        'Analyze',
+        'Paragraphs',
+        'Upper',
+        'Lower',
+        'Case',
+        'Preview',
+        'Count',
+        'Article',
+        'Essay',
+        'Capital',
+        'Sentences',
+        'prrockz',
+        'Summary',
+      ]
 
       const options = {
         radius: 200,
-        maxSpeed: "normal",
-        initSpeed: "fast",
+        maxSpeed: 'normal',
+        initSpeed: 'fast',
         keep: true,
-      };
+      }
 
-      TagCloud(container, texts, options);
-    };
-  }, []);
+      TagCloud(container, texts, options)
+    }
+  }, [])
 
   return (
     <div>
-      <span className={props.mode === 'dark' ? "cloudgrey" : "cloudwhite"}></span>
+      <span
+        className={props.mode === 'dark' ? 'cloudgrey' : 'cloudwhite'}
+      ></span>
     </div>
-  );
-};
+  )
+}
 
-export default TextShpere;
+export default TextShpere
