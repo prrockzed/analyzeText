@@ -16,7 +16,7 @@ const TextShpere = (props) => {
         container = '.cloudwhite'
       }
       const texts = [
-        'prrockz',
+        'prrockzed',
         'Text',
         'Words',
         'Character',
@@ -31,7 +31,7 @@ const TextShpere = (props) => {
         'Essay',
         'Capital',
         'Sentences',
-        'prrockz',
+        'prrockzed',
         'Summary',
       ]
 
